@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo2.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/0a23dac800.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link href="output.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet"   />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <title>FitXpert</title>
+
+</head>
+
+<body class="font-sans bg-white text-black transition duration-500 m-0 p-0 dark:text-black">
+
+    <header
+        class="flex justify-between bg-black py-[20px] px-[80px] text-white items-center md:px-60px max-[1280px]:h-[130px] max-[1280px]:justify-none max-[856px]:py-20 max-[856px]:px-[30px] max-[856px]:h-[100px] dark:bg-white">
+        <div class="text-blue-900 logo flex justify-between">
+            <img src="img/logo.png" alt="logo-img"
+                class="float-left rounded-full h-16 w-16 max-[1280px]:h-[70px] max-[1280px]:w-[70px] max-[856px]:hidden">
+            <h2
+                class="pl-5 text-5xl uppercase cursor-default font-bold max-[1280px]:text-[40px] max-[856px]:pl-0 max-[856px]:text-[33px]">
+                FIT
+                XPERT</h2>
+        </div>
+
+        <div class="buttons flex items-center">
+            <div class="bluees">
+                <a href="#"
+                    class="fa fa-facebook no-underline text-[28px] w-[55px] h-[55px] leading-[55px] text-center bg-blue-900 text-white rounded-full shadow-[0px_0px_10px_white] transition ease-in-out hover:-translate-y-1 hover:scale-[1.25] hover:bg-blue-900 duration-300 max-[1280px]:hidden"></a>
+                <a href="#"
+                    class="fa fa-instagram no-underline text-[28px] w-[55px] h-[55px] leading-[55px] text-center bg-blue-900 text-white rounded-full shadow-[0px_0px_10px_white] transition ease-in-outhover:-translate-y-1 hover:scale-[1.25] hover:bg-blue-900 duration-300 max-[1280px]:hidden"></a>
+                <a href="#"
+                    class="fa fa-youtube no-underline text-[28px] w-[55px] h-[55px] leading-[55px] text-center bg-blue-900 text-white rounded-full shadow-[0px_0px_10px_white] transition ease-in-out hover:-translate-y-1 hover:scale-[1.25] hover:bg-blue-900 duration-300 max-[1280px]:hidden"></a>
+                <a href="#"
+                    class="fa fa-twitter no-underline text-[28px] w-[55px] h-[55px] leading-[55px] text-center bg-blue-900 text-white rounded-full shadow-[0px_0px_10px_white] transition ease-in-out hover:-translate-y-1 hover:scale-[1.25] hover:bg-blue-900 duration-300 max-[1280px]:hidden"></a>
+            </div>
+
+            <button id="theme-toggle" type="button"
+                class=" ml-4 mr-2 text-gray-500 hover:text-black dark: dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-3">
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <div class="idiomas ml-[20px] flex flex-col max-[856px]:mr-[1px] dark:text-black font-semibold">
+                <i id="hola" class="fa-solid fa-language text-center"></i>
+
+                <e onclick="cambiarIdioma('Español')" id="Español" class="cursor-pointer"><a href="#"
+                        class="no-underline max-[1280px]:text-[10px]">Español</a></e>
+                <e onclick="cambiarIdioma('Inglés')" id="Inglés" class="cursor-pointer"><a href="#"
+                        class="no-underline max-[1280px]:text-[10px]">Inglés</a></e>
+                <e onclick="cambiarIdioma('Portugués')" id="Portugués" class="cursor-pointer"><a href="#"
+                        class="no-underline max-[1280px]:text-[10px]">Portugués</a></e>
+                <e onclick="cambiarIdioma('Francés')" id="Francés" class="cursor-pointer"><a href="#"
+                        class="no-underline max-[1280px]:text-[10px]">Francés</a></e>
+            </div>
+        </div>
+    </header>
+
+    <section id="borde1" class="h-[10px] bg-black dark:bg-black"></section>
+    <hr class="dark:border-black">
+
+    <Section id="banner">
+        <div
+            class="contenido-banner flex h-[500px] px-[160px] bg-[#CCCCCC] items-center max-[1280px]:px-[60px] max-[856px]:h-[750px] max-[856px]:px-[20px] max-[856px]:flex-col max-[856px]:justify-center dark:bg-blue-900 dark:text-white">
+            <img src="img/banner.jpg"
+                class="imagen-principal rounded-[30px] border-solid border-[4px] border-blue-900 w-[600px] max-[1280px]:w-[430px] dark:border-black">
+            <h3 class="text-[28px] font-bold pl-[25px] max-[856px]:m-0 max-[856px]:pt-[30px]"><span
+                    class="font-normal"><a id="txt1">Descubre tu mejor
+                        versión. Conviértete en una versión más fuerte, saludable y feliz de ti mismo/a.</a>
+                </span><a id="txt2">¡Únete a nuestra familia y comienza tu viaje hacia la
+                    salud y el bienestar hoy!</a>
+            </h3>
+        </div>
+    </Section>
+
+    <section id="borde1" class="h-[10px] bg-black dark:bg-white"></section>
+    <hr class="dark:border-black">
+
+    <section id="final"
+        class="h-[1200px] px-[100px] bg-[url('/src/img/bg-sec.jpg')] bg-cover bg-center flex justify-around items-center relative before:bg-gray-500 before:bg-opacity-40 before:h-96 max-[1280px]:px-[50px] max-[856px]:flex-col max-[856px]:p-auto max-[856px]:h-[1700px] max-[856px]:py-[600px] max-[856px]:px-[30px] max-[856px]:before:h-[1500px]">
+        <div
+            class="lista text-white relative flex items-center h-[930px] w-[730px] text-justify bg-gray1 bg-opacity-60 border-[1px] border-black border-solid max-[1280px]:h-[900px] max-[1280px]:w-[700px] max-[856px]:py-[50px] max-[856px]:px-[20px]max-[856px]:mb-[30px] max-[856px]:w-[99%] max-[856px]:m-[20px] dark:bg-gray2 dark:text-black dark:border-white">
+            <div class="xd px-[40px] flex flex-col items-center">
+
+                <h2 class="text-[35px] text-blue-900 cursor-default font-bold hover:text-white"><a
+                        id="Bene">BENEFICIOS</a></h2>
+                <ul class="mt-[30px] max-[1280px]:mt-[20px] max-[856px]:mt-[20px]">
+                    <span class="text-[22px] max-[1280px]:text-[18px]">
+                        &#10003<b><a id="t1.1">Mejora de la salud física:</a></b>
+                        <a id="t1.2">El ejercicio regular es fundamental para mantener
+                            una buena salud física. Te brindamos acceso a una amplia variedad de equipos y clases de
+                            fitness que pueden ayudarte a desarrollar fuerza, resistencia, flexibilidad y
+                            equilibrio.</a>
+                    </span>
+                </ul>
+
+
+
+                <ul class="mt-[30px] max-[1280px]:mt-[20px] max-[856px]:mt-[20px]">
+                    <span class="text-[22px] max-[1280px]:text-[18px]">
+                        &#10003<b><a id="t2.1">Bienestar mental:</a></b>
+                        <a id="t2.2">El ejercicio también es beneficioso para la salud mental, ya que puede ayudar a
+                            blueucir el estrés, la ansiedad y la depresión. Nuestro gimnasio puede ser un
+                            excelente lugar para conocer nuevas personas y hacer amigos que comparten tus intereses.</a>
+                    </span>
+                </ul>
+
+                <ul class="mt-[30px] max-[1280px]:mt-[20px] max-[856px]:mt-[20px]">
+                    <span class="text-[22px] max-[1280px]:text-[18px]">
+                        &#10003<b><a id="t3.1">Comodidad y flexibilidad:</a></b>
+                        <a id="t3.2">Inscribirte a nuestro gimnasio te brinda la flexibilidad
+                            de poder hacer ejercicio en cualquier momento del día, independientemente del clima o de tu
+                            horario de trabajo. Además, de que contarás con diferentes tipos de equipos y entrenamientos
+                            para que puedas elegir la actividad que mejor se adapte a tus necesidades y objetivos.</a>
+                    </span>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <section id="Registrar"
+            class="ml-[60px] text-white relative flex items-center justify-center h-[930px] w-[750px] flex-col bg-black bg-opacity-50 border-[1px] border-blue-900 border-solid max-[1280px]:ml-[20px] max-[1280px]:h-[900px] max-[1280px]:w-[700px] max-[856px]:m-0 max-[856px]:h-[700px] max-[856px]:w[600px] max-[856px]:w-[99%] dark:bg-blue-900 dark:border-white">
+            <h2 id="Contact"
+                class="mt-[18px] pb-[10px] text-[35px] text-center uppercase text-blue-900 font-bold cursor-default hover:text-white dark:text-white dark:hover:text-[#c9c9c9f0]">
+                Contacta con Nosotros</h2>
+            <div class="container">
+                <form action="#" method="get" class="m-0 mt-[22px]">
+            </div>
+
+            <input type="text" name="Nombre" id="1" placeholder="Nombre"
+                class="w-[80%] mb-[30px] p-[7px] box-border text-[17px]">
+            <input type="text" name="Apellido(s)" id="2" placeholder="Apellido"
+                class="w-[80%] mb-[30px] p-[7px] box-border text-[17px]">
+            <input type=" text" name="Telefono" id="3" placeholder="Teléfono"
+                class="w-[80%] mb-[30px] p-[7px] box-border text-[17px]">
+            <input type=" text" name="Correo" id="4" placeholder="Correo"
+                class="w-[80%] mb-[30px] p-[7px] box-border text-[17px]">
+            <textarea name=" Descripcion" id="5" placeholder="Describa sus objetivos"
+                class="w-[80%] mb-[30px] p-[7px] box-border text-[17px] min-h-[100px] max-h-[500px]"></textarea>
+            <input type="submit" value="Enviar" id="boton"
+                class="boton text-black w-[80%] mb-[30px] p-[7px] box-border text-[17px] bg-blue-900 font-bold cursor-pointer hover:bg-[#59060685] hover:bg-opacity-50 hover:text-white border-solid dark:bg-[#c3c3c3e4] dark:hover:bg-[#0000009e]">
+            </form>
+
+        </section>
+    </section>
+
+    <hr class="mt-[3px]">
+
+    <section id="Recomendaciones"
+        class="bg-[#CCCCCC] flex flex-col justify-center text-black max-[1280px]:text-center dark:bg-blue-900 dark:text-white">
+        <h2 id="recomen"
+            class="text-center pt-[60px] text-[40px] text-blue-900 hover:text-black cursor-default font-bold dark:text-white dark:hover:text-black">
+            RECOMENDACIONES</h2>
+        <div class="reco pl-[100px] pr-[100px] max-[856px]:pl-[40px] max-[856px]:pr-[40px]">
+            <a class="flex pt-[40px] justify-center text-justify max-[1280px]:flex-col max-[1280px]:items-center">
+                <b class="flex flex-col flex-shrink-0 self-center text-center max-[1280px]:pb-[20px]"><img
+                        src="img/papiLaid.jpg" alt=""
+                        class="h-[200px] block rounded-full pb-[8px] max-[1280px]:w-[200px]">
+                    <e id="laid">David Laid</e>
+                </b>
+                <p id="r1" class="flex items-center text-[28px] pl-[20px]">Power Gym me ha brindado una experiencia
+                    excepcional.
+                    Su equipo amable y profesional me ha
+                    guiado en cada paso hacia mis objetivos de acondicionamiento físico. ¡Definitivamente el mejor
+                    gimnasio para alcanzar tus metas!</p>
+            </a>
+            <a class="flex pt-[40px] justify-center text-justify max-[1280px]:flex-col max-[1280px]:items-center">
+                <b class="flex flex-col flex-shrink-0 self-center text-center max-[1280px]:pb-[20px]">
+                    <img src="img/papiCbum.jpg" alt="" class="h-[200px] rounded-full pb-[8px] max-[1280px]:w-[200px]">
+                    <e id="cbum">Chris Bumstead</e>
+                </b>
+                <p id="r2" class="flex items-center text-[28px] pl-[20px]">Desde mi primer día en Power Gym, me sentí
+                    bienvenido y motivado. Los instructores
+                    comprometidos y las instalaciones bien equipadas hacen que entrenar sea un placer. He logrado perder
+                    peso y tonificar mi cuerpo gracias a sus programas personalizados. ¡Una experiencia de ejercicio
+                    enriquecedora que recomendaría a todos!</p>
+            </a>
+            <a
+                class="a flex pt-[40px] justify-center text-justify pb-[60px] max-[1280px]:flex-col max-[1280px]:items-center">
+                <b class="flex flex-col flex-shrink-0 self-center text-center max-[1280px]:pb-[20px]">
+                    <img src="img/papiDino.jpg" alt="" class="h-[200px] rounded-full pb-[8px] max-[1280px]:w-[200px]">
+                    <e id="dino">Ramón Dino</e>
+                </b>
+                <p id="r3" class="flex items-center text-[28px] pl-[20px]">Power Gym ha sido un salvavidas para mi
+                    ajetreada vida. Con horarios flexibles y entrenadores
+                    atentos, puedo mantenerme en forma sin problemas. Me siento más fuerte y saludable, ¡Y lo debo todo
+                    a este gimnasio! </p>
+            </a>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="Caracteristicas"
+    class="h-[450px] bg-black text-white flex flex-shrink-0 self-center items-center justify-around text-center px-[100px] max-[856px]:h-[1200px] max-[856px]:flex-col max-[856px]:py-[80px] max-[856px]:px-0 dark:bg-white dark:text-black">
+    
+    <div>
+        <h2 class="text-[40px] font-bold uppercase pt-[20px] pb-[20px] w-full text-center">Integrantes</h2>
+    </div>
+
+    <div
+        class="caract1 flex flex-col flex-shrink-0 self-center mr-[40px] hover:translate-y-[-15px] transition-all duration-[400ms] ease-in-out max-[1280px]:mr-[25px] max-[856px]:mr-0 items-center">
+        <img src="img/Joel.jpg" alt=""
+            class="h-[250px] w-[250px] rounded-full shadow-[0px_0px_20px_rgb(33,60,64)] max-[1280px]:h-[220px] max-[1280px]:w-[220px] max-[856px]:h-[250px] max-[856px]:w-[250px] dark:shadow-[0px_0px_40px_#213c40]">
+        <h2 id="c1" class="pt-[30px] text-[23px] font-bold text-center">Florián Arévalo Joel Anderson (A)</h2>
+    </div>
+    <div
+        class="caract2 flex flex-col flex-shrink-0 self-center mr-[40px] hover:translate-y-[-15px] transition-all duration-[400ms] ease-in-out max-[1280px]:mr-[25px] max-[856px]:mr-0 items-center">
+        <img src="img/Maricielo.jpg" alt=""
+            class="h-[250px] w-[250px] rounded-full shadow-[0px_0px_20px_rgb(33,60,64)] max-[1280px]:h-[220px] max-[1280px]:w-[220px] max-[856px]:h-[250px] max-[856px]:w-[250px] dark:shadow-[0px_0px_40px_#213c40]">
+        <h2 id="c2" class="pt-[30px] text-[23px] font-bold text-center">Moreno Tejada Maricielo (A)</h2>
+    </div>
+    <div
+        class="caract3 flex flex-col flex-shrink-0 self-center hover:translate-y-[-15px] transition-all duration-[400ms] ease-in-out items-center">
+        <img src="img/Gusva.jpg" alt=""
+            class="h-[250px] w-[250px] rounded-full shadow-[0px_0px_20px_rgb(33,60,64)] max-[1280px]:h-[220px] max-[1280px]:w-[220px] max-[856px]:h-[250px] max-[856px]:w-[250px] dark:shadow-[0px_0px_40px_#213c40]">
+        <h2 id="c3" class="pt-[30px] text-[23px] font-bold text-center">Silva Suárez Luis Gustavo (A)</h2>
+    </div>
+
+    <div
+        class="caract3 flex flex-col flex-shrink-0 self-center hover:translate-y-[-15px] transition-all duration-[400ms] ease-in-out items-center">
+        <img src="img/Miguel.jpg" alt=""
+            class="h-[250px] w-[250px] rounded-full shadow-[0px_0px_20px_rgb(33,60,64)] max-[1280px]:h-[220px] max-[1280px]:w-[220px] max-[856px]:h-[250px] max-[856px]:w-[250px] dark:shadow-[0px_0px_40px_#213c40]">
+        <h2 id="c3" class="pt-[30px] text-[23px] font-bold text-center">Quesquen Rodas Carlos Miguel (A)</h2>
+    </div>
+
+</section>
+
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "f32c6412-281f-4ba4-b8ee-515f8807baf2", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "36004224-735d-4277-b592-8edac7d6fb8d", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
